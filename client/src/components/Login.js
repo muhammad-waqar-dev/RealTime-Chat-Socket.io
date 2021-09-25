@@ -2,15 +2,15 @@ import React, { useRef } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { v4 as uuidV4 } from "uuid";
 
-export default function Login({ onSubmitId }) {
+export default function Login({ onIdSubmit }) {
   const idRef = useRef();
   const createNewId = () => {
-    onSubmitId(uuidV4());
+    onIdSubmit(uuidV4());
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmitId(idRef.current.value);
+    onIdSubmit(idRef.current.value);
   };
 
   return (
